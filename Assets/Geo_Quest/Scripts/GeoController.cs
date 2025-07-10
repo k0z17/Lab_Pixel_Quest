@@ -13,11 +13,11 @@ public class GeoController : MonoBehaviour
     
         
     }
-    int vartwo = 3;
+    
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(vartwo);
-        vartwo++;
+       transform.position += new Vector3(0.005f, 0, 0); 
+
     }
 }
