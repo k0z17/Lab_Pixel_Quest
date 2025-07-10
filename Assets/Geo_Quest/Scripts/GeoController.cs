@@ -5,7 +5,7 @@ using UnityEngine;
 public class GeoController : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+    public int speed = 5;
 
 
 
@@ -24,19 +24,19 @@ public class GeoController : MonoBehaviour
 
 
         float xInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector3(xInput, rb.velocity.y);
-
+        rb.velocity = new Vector3(xInput * speed, rb.velocity.y);
+        float yInput = Input.GetAxis("Vertical");
 
         /*
         {
          
         if (Input.GetKeyUp(KeyCode.W))
         {
-            transform.position += new Vector3(0, 1, 0);
+            transform.position += new Vector2(rb.velocity.x, 1);
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
-            transform.position += new Vector3(0, -1, 0);
+            transform.position += new Vector2(rb.velocity.x, -1);
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
