@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class GeoController : MonoBehaviour
 {
+    private Rigidbody2D rb;
+
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyUp(KeyCode.W))
         {
             transform.position += new Vector3(0, 1, 0);
@@ -27,13 +31,16 @@ public class GeoController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
-            transform.position += new Vector3(-1, 0, 0);
+            rb.velocity = new Vector2(-1, rb.velocity.y);
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
-            transform.position += new Vector3(1, 0, 0);
+            rb.velocity = new Vector2(1, rb.velocity.y);
+        }
+        {
+
+
         }
 
     }
-
 }
