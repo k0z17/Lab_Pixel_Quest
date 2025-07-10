@@ -21,6 +21,15 @@ public class GeoController : MonoBehaviour
     void Update()
     {
 
+
+
+        float xInput = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector3(xInput, rb.velocity.y);
+
+
+        /*
+        {
+         
         if (Input.GetKeyUp(KeyCode.W))
         {
             transform.position += new Vector3(0, 1, 0);
@@ -38,9 +47,11 @@ public class GeoController : MonoBehaviour
             rb.velocity = new Vector2(1, rb.velocity.y);
         }
         {
+        */
 
-
-        }
 
     }
+
 }
+
+         
