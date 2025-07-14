@@ -6,6 +6,7 @@ public class GeoController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public int speed = 5;
+    public string nextLevel = "Scene_2";
 
 
 
@@ -27,6 +28,12 @@ public class GeoController : MonoBehaviour
                     SceneManager.LoadScene(thislevel);
                     break;
 
+                }
+            case "Finish":
+                {
+
+                    SceneManager.LoadScene(nextLevel);
+                    break;
                 }
         }
     }
