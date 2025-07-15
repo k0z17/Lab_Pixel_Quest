@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,20 @@ using UnityEngine.SceneManagement;
 public class GeoController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Renderer objRenderer;
+   
     public int speed = 5;
     public string nextLevel = "Scene_2";
     public string followingLevel = "Scene_3";
-
-
+    public string secretLevel = "Scene_Secret";
+    public string completedLevel = "Scene_4";
 
     // Start is called before the first frame update
     void Start()
 
     {
         rb = GetComponent<Rigidbody2D>();
-
+        objRenderer = rb.GetComponent<Renderer>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,9 +44,18 @@ public class GeoController : MonoBehaviour
                     break;
 
                 }
+            case "Secret":
+                {
+                    SceneManager.LoadScene(secretLevel);
+                    break ;
 
+                }
+            case "Finish_3":
+                {
+                    SceneManager.LoadScene(completedLevel);
+                    break;
 
-
+                }
 
 
 
@@ -53,9 +65,9 @@ public class GeoController : MonoBehaviour
 
     }
 
-    private void Update()
+    void Update()
     {
-
+        
 
 
         float xInput = Input.GetAxis("Horizontal");
@@ -86,6 +98,8 @@ public class GeoController : MonoBehaviour
 
 
     }
+
+    
 }
 
-         
+

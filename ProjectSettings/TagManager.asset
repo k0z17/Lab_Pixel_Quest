@@ -12,6 +12,8 @@ TagManager:
   - TalkZone
   - Bullet
   - Finish_2
+  - Secret
+  - Finish_3
   layers:
   - Default
   - TransparentFX
