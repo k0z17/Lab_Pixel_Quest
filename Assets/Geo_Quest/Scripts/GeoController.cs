@@ -7,7 +7,7 @@ public class GeoController : MonoBehaviour
     private Rigidbody2D rb;
     public int speed = 5;
     public string nextLevel = "Scene_2";
-
+    public string followingLevel = "Scene_3";
 
 
 
@@ -35,21 +35,36 @@ public class GeoController : MonoBehaviour
                     SceneManager.LoadScene(nextLevel);
                     break;
                 }
+            case "Finish_2":
+                {
+                    SceneManager.LoadScene(followingLevel);
+                    break;
+
+                }
+
+
+
+
+
+
+
+
         }
+
     }
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
 
 
 
         float xInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector3(xInput * speed, rb.velocity.y);
-        
+
 
         /*
         {
-         
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             transform.position = new Vector3(0, 1, 0);
@@ -71,7 +86,6 @@ public class GeoController : MonoBehaviour
 
 
     }
-
 }
 
          
