@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 371426098}
   - component: {fileID: 371426103}
   - component: {fileID: 371426104}
+  - component: {fileID: 371426105}
   - component: {fileID: 371426100}
   - component: {fileID: 371426101}
   - component: {fileID: 371426102}
@@ -748,6 +749,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preFab: {fileID: 7854287240566403132, guid: 1ea6bd9350d50894899d6d0e9622592e, type: 3}
+  bulletTrash: {fileID: 1629114352}
+  bulletSpawn: {fileID: 1442179157}
+--- !u!114 &371426105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371426096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49115a633caf1f8489b214505272ec18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preFab: {fileID: 1337409619630339919, guid: c624feea1ef35a045b7c58cdbc158910, type: 3}
   bulletTrash: {fileID: 1629114352}
   bulletSpawn: {fileID: 1442179157}
 --- !u!1 &396652744

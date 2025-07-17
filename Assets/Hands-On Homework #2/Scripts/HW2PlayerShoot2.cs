@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class HW2PlayerShoot : MonoBehaviour
+public class HW2PlayerShoot_2 : MonoBehaviour
 {
     public GameObject preFab;
-    
+
     public Transform bulletTrash;
     public Transform bulletSpawn;
 
@@ -41,15 +43,15 @@ public class HW2PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && _canShoot)
         {
-            GameObject bullet = Instantiate(preFab, bulletSpawn.position, Quaternion.identity);
+            GameObject bullet_2 = Instantiate(preFab, bulletSpawn.position, Quaternion.identity);
 
-            bullet.transform.SetParent(bulletTrash);
+            bullet_2.transform.SetParent(bulletTrash);
 
             _canShoot = false;
         }
-        
+
 
 
 
