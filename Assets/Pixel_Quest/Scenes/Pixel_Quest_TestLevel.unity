@@ -186,7 +186,13 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8215316366481625994, guid: 040198a0466e6f940b9390f0b54f4814, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8176834313272831743, guid: 040198a0466e6f940b9390f0b54f4814, type: 3}
+    - {fileID: 8473640583382969666, guid: 040198a0466e6f940b9390f0b54f4814, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4099,7 +4105,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 3.1462386, y: 0.9625037}
+  m_Size: {x: 3.4675503, y: 0.9625037}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4114,7 +4120,7 @@ Transform:
   m_GameObject: {fileID: 1738874061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.6016, y: 0.8266, z: 0}
+  m_LocalPosition: {x: 18.7449, y: 0.8266, z: 0}
   m_LocalScale: {x: 17.78141, y: 17.78141, z: 17.78141}
   m_ConstrainProportionsScale: 0
   m_Children: []
