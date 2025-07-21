@@ -19,8 +19,9 @@ public class PlayerJump : MonoBehaviour
     public float jumpForce = 10f;
     public float fallForce = -1;
     private Vector2 gravityForce;
-    // Sets gravity vector and connects components
-
+    // Water Check
+    private bool _waterCheck;
+    private string _waterTag = "Water";
     void Start()
     {
         gravityForce = new Vector2(0f, Physics2D.gravity.y);
@@ -28,6 +29,14 @@ public class PlayerJump : MonoBehaviour
 
 
 
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Water") { _waterCheck = true; }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Water") { _waterCheck = false; }
     }
 
 
@@ -37,20 +46,20 @@ public class PlayerJump : MonoBehaviour
         _groundCheck = Physics2D.OverlapCapsule(point: feetCollider.position, size: new Vector2(CapsuleHeight, CapsuleRadius), CapsuleDirection2D.Vertical, angle: 0, groundMask);
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && _groundCheck)
+        if (Input.GetKeyDown(KeyCode.Space) && (_waterCheck || _groundCheck))
         {
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
 
 
         }
-        if (_rigidbody2D.velocity.y > 0)
+        if (_rigidbody2D.velocity.y < 0 && !_waterCheck)
         {
             _rigidbody2D.velocity += gravityForce * (fallForce * Time.deltaTime);
 
 
 
         }
-
+        
             
 
 
