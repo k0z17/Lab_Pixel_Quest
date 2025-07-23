@@ -74,7 +74,12 @@ public class PlayerStats : MonoBehaviour
 
                 }
                 break;
+            case "Respawn":
+                {
+                    respawnPoint.position = other.transform.Find("Point").position;
+                    break;
 
+                }
 
 
 
