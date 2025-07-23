@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 497313412}
   - component: {fileID: 497313411}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Death Area
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
