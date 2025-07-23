@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
+
+
+
+    public Transform respawnPoint;
     public string nextLevel = "GeoLevel_2";
     public int coinCount = 0;
-    private int _health = 3;
+    public int _health = 3;
     private void OnTriggerEnter2D(Collider2D other)
         
     { switch (other.tag)
@@ -21,12 +25,36 @@ public class PlayerStats : MonoBehaviour
                 }
             case "Death":
                 {
-                    string thisLevel = SceneManager.GetActiveScene().name;
-                    SceneManager.LoadScene(thisLevel);
-                    break ;
+                    _health--;
+                    if (_health <= 0)
+                    {
+                        string thisLevel = SceneManager.GetActiveScene().name;
+                        SceneManager.LoadScene(thisLevel);
 
 
+                    }
+                    else
+                    {
+                        transform.position = respawnPoint.position;
+
+
+
+                    }
+                    break;
+
+
+
+
+                    
                 }
+
+
+
+
+
+
+
+                
             case "Coin":
                 {
                     coinCount++;
@@ -36,15 +64,16 @@ public class PlayerStats : MonoBehaviour
 
                 }
             case "Health":
+                if (_health < 3)
                 {
                     _health++;
                     Destroy(other.gameObject);
-                    break;
+                    
 
 
 
                 }
-
+                break;
 
 
 
