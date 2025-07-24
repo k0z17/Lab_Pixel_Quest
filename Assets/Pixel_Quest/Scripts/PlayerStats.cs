@@ -11,6 +11,30 @@ public class PlayerStats : MonoBehaviour
     public string nextLevel = "Level_2";
     public int coinCount = 0;
     public int _health = 3;
+    public int _maxHealth = 3;
+    private PlayerUIController _playerUIController;
+    private void Start()
+    {
+        _playerUIController = GetComponent<PlayerUIController>();
+        _playerUIController.UpdateHealth(_health, _maxHealth);
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void OnTriggerEnter2D(Collider2D other)
         
     { switch (other.tag)
@@ -27,6 +51,7 @@ public class PlayerStats : MonoBehaviour
             case "Death":
                 {
                     _health--;
+                    _playerUIController.UpdateHealth(_health,_maxHealth);
                     if (_health <= 0)
                     {
                         string thisLevel = SceneManager.GetActiveScene().name;
@@ -68,6 +93,7 @@ public class PlayerStats : MonoBehaviour
                 if (_health < 3)
                 {
                     _health++;
+                    _playerUIController.UpdateHealth(_health,_maxHealth);
                     Destroy(other.gameObject);
                     
 
