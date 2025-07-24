@@ -26,7 +26,7 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-       if(_rigidbody2D.velocity.x == 0)
+       if(_rigidbody2D.velocity.x != 0)
         {
             _animator.SetBool(name: "isWalking", true);
 
