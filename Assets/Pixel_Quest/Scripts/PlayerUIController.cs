@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
 
 public class PlayerUIController : MonoBehaviour
 {
 
-    public UnityEngine.UI.Image HeartImage;
+    public Image HeartImage;
+    private TextMeshProUGUI _text;
     // Start is called before the first frame update
-    private void Start()
+    public void StartUI()
     {
         HeartImage = GameObject.Find("HeartImage").GetComponent<Image>();
-
+        _text = GameObject.Find("Cointext").GetComponent<TextMeshProUGUI>();
 
 
     }
@@ -34,7 +34,11 @@ public class PlayerUIController : MonoBehaviour
 
 
     }
+    public void UpdateCoin(string newText) { _text.text = newText; }
+    
+       
 
+    
 
 
 

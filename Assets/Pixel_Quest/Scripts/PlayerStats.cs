@@ -12,12 +12,15 @@ public class PlayerStats : MonoBehaviour
     public int coinCount = 0;
     public int _health = 3;
     public int _maxHealth = 3;
+    public int coinsInLevel = 0;
     private PlayerUIController _playerUIController;
     private void Start()
     {
+       coinsInLevel = GameObject.Find("Coin").transform.childCount;
         _playerUIController = GetComponent<PlayerUIController>();
+        _playerUIController.StartUI();
         _playerUIController.UpdateHealth(_health, _maxHealth);
-
+        _playerUIController.UpdateCoin(newText: coinCount + "/" + coinsInLevel);
 
 
     }
@@ -84,6 +87,7 @@ public class PlayerStats : MonoBehaviour
             case "Coin":
                 {
                     coinCount++;
+                    _playerUIController.UpdateCoin(newText: coinCount + "/" + coinsInLevel);
                     Destroy(other.gameObject);
                     break;
 
